@@ -2,6 +2,8 @@ package com.chrislg.whisky.entity;
 
 //import org.hibernate.annotations.Type;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -30,12 +32,15 @@ public class WhiskyEntry {
     private int rating;
 
     @Column(name = "whisky_buy")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean buy;
 
     @Column(name = "whisky_gift")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean gift;
 
     @Column(name = "whisky_bin")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean bin;
 
     @Column(name = "whisky_notes")

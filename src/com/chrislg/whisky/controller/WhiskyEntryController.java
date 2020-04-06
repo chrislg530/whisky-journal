@@ -28,9 +28,11 @@ public class WhiskyEntryController {
     }
 
     @GetMapping("/whiskyEntry")
-    public String listWhiskyEntry(@RequestParam("whiskyEntry") int id, Model model) {
+    public String listWhiskyEntry(@RequestParam("whiskyId") int id, Model model) {
         // get whisky form dao
         WhiskyEntry whiskyEntry = whiskyService.getWhiskyEntry(id);
+
+        System.out.println(whiskyEntry.toString());
 
         // add whisky to model
         model.addAttribute("whiskyEntry", whiskyEntry);

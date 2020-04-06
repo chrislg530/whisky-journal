@@ -64,8 +64,12 @@
 				<c:url var="deleteLink" value="/whisky/delete">
 					<c:param name="whiskyId" value="${tempWhisky.id}" />
 				</c:url>
+				<!--- construct a link with whisky id --->
+				<c:url var="detailLink" value="/whisky/whiskyEntry">
+					<c:param name="whiskyId" value="${tempWhisky.id}" />
+				</c:url>
 				<tr>
-					<td> ${tempWhisky.name} </td>
+					<td><a href="${detailLink}">${tempWhisky.name}</a></td>
 					<td> ${tempWhisky.age} </td>
 					<td> ${tempWhisky.distiller} </td>
 					<td> ${tempWhisky.origin} </td>
