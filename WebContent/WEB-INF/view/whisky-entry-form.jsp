@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>Save Customer</title>
+	<title>Save Whisky Entry</title>
 
 	<link type="text/css"
 		  rel="stylesheet"
@@ -12,35 +12,49 @@
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
+		  href="${pageContext.request.contextPath}/resources/css/add-whisky-style.css">
 </head>
 
 <body>
 	
 	<div id="wrapper">
 		<div id="header">
-			<h2>CRM - Customer Relationship Manager</h2>
+			<h2>Whisky Journal</h2>
 		</div>
 	</div>
 
 	<div id="container">
-		<h3>Save Customer</h3>
+		<h3>Save Whisky</h3>
 	
-		<form:form action="saveCustomer" modelAttribute="customer" method="POST">
+		<form:form action="saveWhisky" modelAttribute="whiskyEntry" method="POST">
 
-			<!-- associate data with customer id -->
+			<!-- associate data with whisky id -->
 			<form:hidden path="id" />
 		
 			<table>
 				<tbody>
 					<tr>
-						<td><label>First name:</label></td>
-						<td><form:input path="firstName" /></td>
+						<td><label>Name:</label></td>
+						<td><form:input path="name" /></td>
 					</tr>
 				
 					<tr>
+						<td><label>Age:</label></td>
+						<td><form:input path="age" /></td>
+					</tr>
+
+					<tr>
+						<td><label>Distiller:</label></td>
+						<td><form:input path="distiller" /></td>
+					</tr>
+					<tr>
+						<td><label>Origin:</label></td>
+						<td><form:input path="origin" /></td>
+					</tr>
+
+					<tr>
 						<td><label>Last name:</label></td>
-						<td><form:input path="lastName" /></td>
+						<td><form:input path="rating" /></td>
 					</tr>
 
 					<tr>

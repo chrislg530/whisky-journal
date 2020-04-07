@@ -32,7 +32,8 @@ public class WhiskyEntryController {
         // get whisky form dao
         WhiskyEntry whiskyEntry = whiskyService.getWhiskyEntry(id);
 
-        System.out.println(whiskyEntry.toString());
+        //System.out.println(whiskyEntry.toString());
+        //System.out.println(whiskyEntry.getWhiskyEntryDetail().toString());
 
         // add whisky to model
         model.addAttribute("whiskyEntry", whiskyEntry);
