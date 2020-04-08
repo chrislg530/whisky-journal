@@ -78,13 +78,13 @@ public class WhiskyDAOImpl implements WhiskyDAO {
         if (theSearchName != null && theSearchName.trim().length() > 0) {
 
             // search for whisky_name... case insensitive
-            theQuery =currentSession.createQuery("from whisky_entry where lower(whisky_name) like :theName", WhiskyEntry.class);
+            theQuery =currentSession.createQuery("from WhiskyEntry where lower(whisky_name) like :theName", WhiskyEntry.class);
             theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
 
         }
         else {
             // theSearchName is empty ... so just get all whiskies
-            theQuery =currentSession.createQuery("from whisky_entry", WhiskyEntry.class);
+            theQuery =currentSession.createQuery("from WhiskyEntry", WhiskyEntry.class);
         }
 
         // execute query and get result list

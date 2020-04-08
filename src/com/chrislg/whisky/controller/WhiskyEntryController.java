@@ -58,7 +58,7 @@ public class WhiskyEntryController {
     }
 
     @GetMapping("/showFormForUpdate")
-    public String showFormForUpdate(@RequestParam("whiskyEntry") int id,
+    public String showFormForUpdate(@RequestParam("whiskyId") int id,
                                     Model model) {
         // get entry from db
         WhiskyEntry whiskyEntry = whiskyService.getWhiskyEntry(id);
@@ -80,7 +80,7 @@ public class WhiskyEntryController {
     }
 
     @GetMapping("/delete")
-    public String deleteWhisky(@RequestParam("whiskyEntryId") int id) {
+    public String deleteWhisky(@RequestParam("whiskyId") int id) {
         whiskyService.deleteWhiskyEntry(id);
 
         return "redirect:/whisky/whiskyList";

@@ -20,11 +20,7 @@
 
     <link type="text/css"
           rel="stylesheet"
-          href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
-
-
-
-
+          href="${pageContext.request.contextPath}/resources/css/add-whisky-style.css">
 </head>
 <body>
 <div id="wrapper">
@@ -46,8 +42,9 @@
             <input type="checkbox" id="buy" disabled/> Buy it
             <input type="checkbox" id="gift" disabled/> Gift it
             <input type="checkbox"  id="bin"  disabled/> Bin it
-        </p><br><br>
-        <p>Description: </p>
+        </p>
+        <p>Color: ${whiskyEntry.color}</p>
+        <p>Tasting Notes: </p>
         <p>${whiskyEntry.notes}</p>
 
         <script>

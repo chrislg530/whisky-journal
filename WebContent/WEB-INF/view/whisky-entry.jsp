@@ -43,7 +43,8 @@
             <input type="checkbox" id="gift" disabled/> Gift it
             <input type="checkbox"  id="bin"  disabled/> Bin it
         </p>
-        <p>Description: </p>
+        <p>Color: ${whiskyEntry.color}</p>
+        <p>Tasting Notes: </p>
         <p>${whiskyEntry.notes}</p>
 
         <script>

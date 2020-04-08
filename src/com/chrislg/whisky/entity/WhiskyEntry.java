@@ -43,6 +43,9 @@ public class WhiskyEntry {
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private boolean bin;
 
+    @Column(name = "whisky_color")
+    private String color;
+
     @Column(name = "whisky_notes")
     private String notes;
 
@@ -53,7 +56,7 @@ public class WhiskyEntry {
     @JoinColumn(name = "whisky_detail_id")
     private WhiskyEntryDetail whiskyEntryDetail;
 
-    public WhiskyEntry(String name, int age, String distiller, String origin, int rating, boolean buy, boolean gift, boolean bin, String notes, Timestamp timestamp) {
+    public WhiskyEntry(String name, int age, String distiller, String origin, int rating, boolean buy, boolean gift, boolean bin,String color, String notes, Timestamp timestamp) {
         this.name = name;
         this.age = age;
         this.distiller = distiller;
@@ -62,6 +65,7 @@ public class WhiskyEntry {
         this.buy = buy;
         this.gift = gift;
         this.bin = bin;
+        this.color = color;
         this.notes = notes;
         this.timestamp = timestamp;
     }
@@ -115,6 +119,14 @@ public class WhiskyEntry {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getNotes() {
@@ -177,6 +189,7 @@ public class WhiskyEntry {
                 ", buy=" + buy +
                 ", gift=" + gift +
                 ", bin=" + bin +
+                ", color='" + color + '\'' +
                 ", notes='" + notes + '\'' +
                 ", timestamp=" + timestamp +
                 ", whiskyEntryDetail=" + whiskyEntryDetail +
