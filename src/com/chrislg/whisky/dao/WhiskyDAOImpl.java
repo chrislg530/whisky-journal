@@ -50,8 +50,6 @@ public class WhiskyDAOImpl implements WhiskyDAO {
         // get current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
-        whiskyEntry.setWhiskyEntryDetail(whiskyEntry.getWhiskyEntryDetail());
-
         // save the whiskyEntry
         currentSession.saveOrUpdate(whiskyEntry);
     }
