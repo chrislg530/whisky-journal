@@ -59,12 +59,18 @@ public class WhiskyDAOImpl implements WhiskyDAO {
         // get current hibernate session
         Session currentSession = sessionFactory.getCurrentSession();
 
-        // delete customer with primary key
+        // delete whisky with primary key
         Query query =
                 currentSession.createQuery("delete from WhiskyEntry where id=:whiskyId");
         query.setParameter("whiskyId",id);
 
         query.executeUpdate();
+
+        Query query2 =
+                currentSession.createQuery("delete from WhiskyEntryDetail where id=:whiskyDetailId");
+        query2.setParameter("whiskyDetailId",id);
+
+        query2.executeUpdate();
     }
 
     @Override
