@@ -30,6 +30,7 @@
 
 			<!-- associate data with whisky id -->
 			<form:hidden path="id" />
+			<form:hidden path="whiskyEntryDetail.id" />
 		
 			<table>
 				<tbody>

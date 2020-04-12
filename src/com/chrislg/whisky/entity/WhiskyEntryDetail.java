@@ -1,13 +1,18 @@
 package com.chrislg.whisky.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name="whisky_entry_detail")
 public class WhiskyEntryDetail {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(generator = "foreigngen")
+    @GenericGenerator(strategy = "foreign", name="foreigngen",
+            parameters = @Parameter(name = "property", value="whiskyEntry"))
     @Column(name="id")
     private int id;
 
@@ -59,6 +64,9 @@ public class WhiskyEntryDetail {
     @Column(name="legs")
     private int legs;
 
+    @OneToOne(mappedBy = "whiskyEntryDetail")
+    private WhiskyEntry whiskyEntry;
+
     public WhiskyEntryDetail(int balance, int linger, int heat, int darkFruit, int citrus, int floral, int spicy, int herbal, int malty, int toffee, int woody, int tannic, int charLvl, int sweet, int body, int legs) {
         this.balance = balance;
         this.linger = linger;
@@ -80,6 +88,7 @@ public class WhiskyEntryDetail {
 
     public WhiskyEntryDetail() {
     }
+
 
     public int getId() {
         return id;
@@ -215,6 +224,14 @@ public class WhiskyEntryDetail {
 
     public void setLegs(int legs) {
         this.legs = legs;
+    }
+
+    public WhiskyEntry getWhiskyEntry() {
+        return whiskyEntry;
+    }
+
+    public void setWhiskyEntry(WhiskyEntry whiskyEntry) {
+        this.whiskyEntry = whiskyEntry;
     }
 
     @Override

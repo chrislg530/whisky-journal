@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 public class WhiskyEntry {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name="id")
     private int id;
 
@@ -53,7 +53,7 @@ public class WhiskyEntry {
     private Timestamp timestamp;
 
     @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "whisky_detail_id")
+    @PrimaryKeyJoinColumn
     private WhiskyEntryDetail whiskyEntryDetail;
 
     public WhiskyEntry(String name, int age, String distiller, String origin, int rating, boolean buy, boolean gift, boolean bin,String color, String notes, Timestamp timestamp) {
