@@ -12,7 +12,6 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="whisky-journal" />
-          <element id="jpa-descriptors" facet="whisky-journal/jpa/JPA" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.9.RELEASE" />
@@ -53,11 +52,10 @@
           <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
         </element>
       </element>
-      <element id="directory" name="META-INF" />
-      <element id="javaee-facet-resources" facet="whisky-journal/web/Web" />
-      <element id="directory" name="resources">
-        <element id="dir-copy" path="$PROJECT_DIR$/WebContent/resources" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/whisky-journal/META-INF/MANIFEST.MF" />
       </element>
+      <element id="javaee-facet-resources" facet="whisky-journal/web/Web" />
     </root>
   </artifact>
 </component>

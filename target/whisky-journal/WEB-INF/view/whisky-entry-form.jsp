@@ -266,12 +266,13 @@
 		
 		
 		</form:form>
-	
 
-		
-		<p>
-			<a href="${pageContext.request.contextPath}/whisky/whiskyList">Back to List</a>
-		</p>
+
+		<br><br>
+		<input type="button" value="Back"
+			   onclick="window.history.back();"
+			   class="add-button"
+		/>
 	
 	</div>
 

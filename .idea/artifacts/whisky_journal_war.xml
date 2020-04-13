@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="whisky-journal:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>whisky-journal</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="whisky-journal.war">
+      <element id="artifact" artifact-name="whisky-journal:war exploded" />
+    </root>
+  </artifact>
+</component>

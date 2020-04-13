@@ -5,9 +5,11 @@
 	<groupId>com.chrislg.whisky</groupId>
 	<artifactId>whisky-journal</artifactId>
 	<version>1.0.0</version>
-	<packaging>war:exploded</packaging>
+	<packaging>war</packaging>
+
 
 	<properties>
+		<java-version>1.8</java-version>
 		<springframework.version>5.1.9.RELEASE</springframework.version>
 		<hibernate.version>5.4.4.Final</hibernate.version>
 		<mysql.connector.version>8.0.17</mysql.connector.version>
@@ -88,17 +90,65 @@
 
 	<build>
 
-		<finalName>whisky-journal</finalName>
+		<finalName>${project.artifactId}</finalName>
 
 		<plugins>
 
 			<!-- Builds a Web Application Archive (WAR) file from the project output 
 				and its dependencies. -->
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
 				<!-- Add Maven coordinates (GAV) for: maven-war-plugin -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20.1</version>
+				<configuration>
+					<includes>
+						<include>**/*Tests.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/Abstract*.java</exclude>
+					</excludes>
+					<junitArtifactName>junit:junit</junitArtifactName>
+					<argLine>-Xmx512m</argLine>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>sources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Add Jetty Maven Plugin for deployment -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.3.11.v20160721</version>
+				<configuration>
+					<webApp>
+						<contextPath>/${project.artifactId}</contextPath>
+					</webApp>
+				</configuration>
 			</plugin>
 
 		</plugins>
