@@ -15,6 +15,16 @@ git clone git://github.com/chrislg530/whisky-journal.git
 Visit the [GitHub Help Page](https://help.github.com) for more information.
 ### Install Maven
 Please visit the [Maven Help Page](https://maven.apache.org/install.html) on how to install Maven to your operation system.
+### Install MySQL Sever
+Please visit the [MySQL Help Page](https://dev.mysql.com/doc/refman/8.0/en/installing.html) on how to install an configure a mysql server.
+### Create the database
+Please use the sql file located in the "sql" folder to generate the appropriate schema.
+Change the port number in the whisky-journal-servlet.xml file if necessary.
+```xml
+<!-- Change the port number in the following line if necessary -->
+<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/whisky_journal?useSSL=false&amp;serverTimezone=UTC" /> 
+```
+
 
 ## Running the application
 Using a command line interface with Maven. 

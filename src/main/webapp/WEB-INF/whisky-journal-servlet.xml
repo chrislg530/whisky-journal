@@ -31,6 +31,7 @@
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+		<!-- Change the port number in the following line if necessary -->
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/whisky_journal?useSSL=false&amp;serverTimezone=UTC" />
         <property name="user" value="whiskyjournal" />
         <property name="password" value="whiskyjournal" />
